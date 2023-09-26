@@ -8,7 +8,7 @@ stages
 
   stage ('docker build and push')
   {steps { withDockerRegistry(credentialsId: 'dockerHubAccount', url: 'https://index.docker.io/v1/') 
-          {  sh 'docker build -t pkw0301/intellipaat:latest'
+          {  sh 'docker build -t pkw0301/intellipaat:latest .'
              sh 'docker push pkw0301/intellipaat:latest'}  
          } }
 
