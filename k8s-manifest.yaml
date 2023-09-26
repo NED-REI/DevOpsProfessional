@@ -19,7 +19,7 @@ spec:
         image: pkw0301/intellipaat:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 80
+        - containerPort: 85
 ---
 kind: Service
 apiVersion: v1
@@ -31,5 +31,5 @@ spec:                               #service and pod connection properties
   ports:
     - protocol: "TCP"                   #TCP, UDP, TLS
       port: 80
-      targetPort: 80
+      targetPort: 85
   type: NodePort 
