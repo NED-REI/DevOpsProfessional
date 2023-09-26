@@ -14,7 +14,8 @@ stages
 
  stage ('deploy to kubernetes')
  {steps { withAWS(credentials: 'awsaccount', region: 'eu-central-1') 
-   { sh 'aws eks --region eu-central-1 update-kubeconfig --name intellipaat-eks-cluster'
+   { sh 'aws sts get-caller-identity'
+     sh 'aws eks --region eu-central-1 update-kubeconfig --name intellipaat-eks-cluster'
      sh  'kubectl apply -f k8s-manifest.yaml'
    } }
  }
