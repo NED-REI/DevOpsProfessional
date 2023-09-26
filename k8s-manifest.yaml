@@ -17,6 +17,7 @@ spec:
       containers:
       - name: myapp
         image: pkw0301/intellipaat:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
 ---
