@@ -1,3 +1,3 @@
 FROM httpd
 LABEL author=ashwini
-COPY . /var/www/html/
+COPY index.html /var/www/html/
